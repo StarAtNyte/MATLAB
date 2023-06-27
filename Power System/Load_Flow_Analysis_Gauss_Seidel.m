@@ -80,11 +80,11 @@ fprintf('Q_slack = %f MVAR\n\n\n', -(imag(temp))*100);
 
 %% (c)line flows and line losses after second iteration.
 I = zeros(3,3);
-I(1,2) = -Ybus(1,2)*(V(1,1)-V(2,1));
+I(1,2) = Ybus(1,2)*(V(1,1)-V(2,1));
 I(2,1) = -I(1,2);
-I(1,3) = -Ybus(1,3)*(V(1,1)-V(3,1));
+I(1,3) = Ybus(1,3)*(V(1,1)-V(3,1));
 I(3,1) = -I(1,3);
-I(3,2) = -Ybus(3,2)*(V(3,1)-V(2,1));
+I(3,2) = Ybus(3,2)*(V(3,1)-V(2,1));
 I(2,3) = -I(3,2);
 
 S = zeros(3,3);
